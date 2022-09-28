@@ -1,0 +1,25 @@
+** npm install -g typescript ** INSTALA O TYPESCRIPT GLOBALMENTE
+** npm install typescript ** INSTALA O TYPESCRIPT APENAS NO PROJETO QUE ESTAMOS
+
+O TypeScript é um JavaScript que trabalha com tipagem de dados afim de evitar erros antes da execução do código
+O TypeScript é capaz de fornecer a verificação de tipo durante o desenvolvimento, o que traz nenhum impacto sobre o código JavaScript resultante porque ele não dá suporte a tipos
+
+EX:
+function addNumbers(x, y) {
+  return x + y;
+}
+
+console.log(addNumbers('três', 6));
+
+Aqui estamos esperando o parametro x e y, ambos sendo do tipo number para assim realizarmos uma operação de soma e retornar o valor
+Porém nesse caso o parametro x está sendo enviado como string, só que com o JavaScript só seremos informados desse erro de tipagem de dado apartir da execução do código onde será retornado um 'NaN'
+
+Mas isso poderia ser evitado com o TypeScript e economizaria tempo, além de tornar o código de mais fácil entendimento para qualquer pessoa
+
+function addNumbers(x: number, y: number) {
+  return x + y;
+}
+
+console.log(addNumbers('três', 6));
+
+Dessa forma dizemos que os tipos de x e y devem ser number, sendo assim qualquer outro tipo de dado enviado sem ser do tipo number será negado pelo TypeScript e o código não será executado até o erro de tipagem ser resolvido

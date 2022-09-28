@@ -1,0 +1,10 @@
+Para iniciar o desenvolvimento em TypeScript primeiro é necessário instlar o mesmo:
+npm i -g typescript
+
+Pronto agora temos o typescript instalado, o próximo passo é utilizar o tsconfig.json para configurar a nossa utilização do typescript, como setar uma es especifica como es2017 e etc.
+
+tsc --init *Faça isso na pasta raiz de desenvolvimento*
+
+Após isso precisamos transpilar o nosso arquivo .ts para as configs do tsconfig.json
+
+Ctrl + Shift + B --> build/compilar
