@@ -1,0 +1,15 @@
+tsc
+Fará com que todos os arquivos .ts sejam compilados para um arquivo .js
+
+tsc exemplo.ts
+Somente esse arquivo será compilados
+
+Para controlar a compilação, você pode usar as opções do compilador com o comando tsc, incluindo:
+
+A opção --noImplicitAny instrui o compilador a gerar erros em expressões e declarações com um tipo any implícito. 
+Por exemplo: 
+tsc exemplo.ts --noImplicitAny
+
+A opção --target especifica a versão de destino do ECMAScript para o arquivo JavaScript. 
+Este exemplo compila um arquivo JavaScript em conformidade com ECMAScript 6:
+tsc exemplo.ts --target "ES2015"
