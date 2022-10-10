@@ -39,7 +39,7 @@ valorAleatorio = 'João';
 //valorAleatorio.toUpperCase();      //! Error: Object is of type unknown
 
 /*
-* | ASSERÇÃO DE TIPO |
+* | DECLARAÇÃO/ASSERÇÃO DE TIPO |
 Se você precisar tratar uma variável como um tipo de dados diferente, poderá usar uma declaração de tipo. 
 Uma declaração de tipo informa ao TypeScript que você executou as verificações especiais necessárias antes de chamar a instrução. 
 Ele informa ao compilador "confie em mim, eu sei o que estou fazendo". Uma declaração de tipo é como uma cast de tipo em outras linguagens, mas não executa nenhuma verificação especial ou reestruturação de dados. 
@@ -71,5 +71,5 @@ if (typeof randomValue === "string") { // Se o tipo de randomValue for igual a "
 const a: number[] = [1, 2, 3, 4, 5]
 
 if(Array.isArray(a)){
-    console.log('é um array')
+    (a as []).forEach(num => console.log(num))
 }

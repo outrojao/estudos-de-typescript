@@ -1,0 +1,2 @@
+Uma forma mais avançadas para declarar tipos. 
+Os tipos de união e interseção ajudam a lidar com situações em que um tipo é composto por dois ou mais tipos possíveis, enquanto os tipos literais permitem restringir os valores atribuídos a um tipo a uma lista restrita de opções.

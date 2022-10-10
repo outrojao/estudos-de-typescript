@@ -1,0 +1,8 @@
+Tipos literais
+Um literal é um subtipo mais concreto de um tipo coletivo. Isso significa que "Hello World" é uma string, mas uma string não é "Hello World" dentro do sistema de tipos
+Há três conjuntos de tipos literais disponíveis no TypeScript: string, number e boolean. Ao usar tipos literais, você pode especificar um valor exato que uma cadeia de caracteres, um número ou um booliano deve ter (por exemplo, "sim", "não" ou "talvez")
+
+O que é a limitação literal?
+Quando você declara uma variável usando var ou let no TypeScript, está informando ao compilador que há a chance de que essa variável altere seu conteúdo. A declaração de uma variável com tipos let (por exemplo, como a string), permite um número infinito de valores potenciais
+Por outro lado, o uso de const para declarar uma variável informará ao TypeScript que esse objeto nunca será alterado. A declaração com tipos const para o valor (por exemplo, "Olá, Mundo")
+O processo de passar de um número infinito de casos potenciais para um número menor e finito de casos em potencial é chamado de restrição/limitação
