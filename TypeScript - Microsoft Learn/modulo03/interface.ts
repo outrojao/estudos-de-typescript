@@ -67,3 +67,85 @@ const eu: Motorista = {
 }
 
 console.log(eu)
+
+/*
+* | ESTENDENDO INTERFACES |
+Isso permite que você copie os membros de uma interface em outra, proporcionando a você mais flexibilidade na maneira de separar suas interfaces em componentes reutilizáveis.
+
+* | REGRAS |
+? Você precisa implementar todas as propriedades necessárias de todas as interfaces.
+? Duas interfaces poderão ter a mesma propriedade se a propriedade tiver exatamente o mesmo nome e o mesmo tipo.
+? Se duas interfaces tiverem uma propriedade com o mesmo nome, mas tipos diferentes, você precisará declarar uma nova propriedade de modo que a propriedade resultante seja um subtipo de ambas as interfaces.
+*/
+
+interface Leao {
+    nome: string,
+    idade: number,
+    cor: string
+}
+
+interface MeuLeao extends Leao {
+    função: string
+    comeu: boolean
+}
+
+const meuLeao: MeuLeao = {
+    nome: 'Mufasa',
+    idade: 30,
+    cor: 'amarelo',
+    função: 'Rei',
+    comeu: true
+}
+
+function averiguarLeao(leao: MeuLeao){
+    if(leao.idade >= 50){
+        console.log(`${leao.nome} é um leão de ${leao.idade} anos de idade, um leão velho`)
+    } else {
+        console.log(`${leao.nome} é um leão novo que tem a função de ${leao.função} e ${leao.comeu ? 'já comeu' : 'ainda não comeu'}`);
+    }
+}
+
+averiguarLeao(meuLeao)
+
+/*
+* | OUTRAS MANEIRAS DE USAR AS INTERFACES |
+? Criar tipos indexáveis
+? Descrever uma API do JavaScript usando uma interface
+*/
+
+//* CRIANDO TIPOS INDEXÁVEIS
+interface Sabores {
+    [index: number]: string; //? declara que Sabores é indexado com um número e retornará uma cadeia de caracteres
+}
+
+let meuSorvete: Sabores;
+meuSorvete = ['chocolate', 'baunilha', 'morango'];
+let stringRetornada: string = meuSorvete[0]; //* meuSorvete[1], meuSorvete[2]
+console.log(stringRetornada);
+
+//* DESCREVENDO API USANDO INTERFACE
+const fetchURL = 'https://jsonplaceholder.typicode.com/posts'
+
+interface Post { //? aqui descrevemos os dados do post e seus tipos
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+}
+
+async function fetchPosts(url: string) {
+    let response = await fetch(url);
+    let body = await response.json();
+    return body as Post[]; //? body é um array de posts
+}
+
+async function showPost() {
+    let posts = await fetchPosts(fetchURL);
+    let post = posts[0];
+    console.log('Post #' + post.id)
+    console.log('Author: ' + (post.userId === 1 ? "Administrator" : post.userId.toString()))
+    console.log('Title: ' + post.title)
+    console.log('Body: ' + post.body)
+}
+
+showPost();
