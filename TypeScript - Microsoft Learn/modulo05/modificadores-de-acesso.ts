@@ -68,7 +68,8 @@ class CarroDois {
         return `${this.worker()} esta virando para ${direcao}`
     }
 
-    private worker(): string {
+    //?  Isso permite que as subclasses da classe CarroDois usem a função
+    protected worker(): string {
         return this._marca
     }
 
