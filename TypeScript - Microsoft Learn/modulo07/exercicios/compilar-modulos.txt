@@ -1,0 +1,10 @@
+Compila o módulo main.ts para Node.js, cada módulo se tornará um arquivo.js separado:
+
+tsc --module commonjs nome-do-modulo.ts
+
+Compila o arquivo TypeScript para ES6 para uso em um navegador da Web:
+
+tsc --module es6 main.ts
+<script type="module" src=".\main.js"></script>
+
+VER ARQUIVOS NA PASTA modulos-compilados
